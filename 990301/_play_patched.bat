@@ -1,0 +1,1 @@
+".\tools\mesen\mesen" ".\roms\quinty990301_patched.sfc"
