@@ -11,3 +11,11 @@ macro seekFile(n) {
   origin {n}
   base ((origin() & $1FFFFF) | 0xC00000)
 }
+
+macro copyMVN(src, dst, size) {
+  rep #$30
+  ldx.w #{src}&$FFFF
+  ldy.w #{dst}&$FFFF
+  lda.w #{size}-1
+  mvn {dst}>>16={src}>>16
+}

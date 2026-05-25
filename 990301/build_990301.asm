@@ -11,3 +11,4 @@ insert "./roms/quinty990301.sfc"
 
 include "./asm/arcade.asm"
 include "./asm/options.asm"
+include "./asm/normal.asm"
