@@ -26,14 +26,32 @@ _pal_round09:
 	copyMVN($C62060, $7EDE55, 0x20)
 	jmp _force_palette_cont
 
+_pal_round29:
+	//Force Palette for Artist (Round 2-10)
+	copyMVN($C625C0, $7EDC55, 0x20)
+	copyMVN($C625C0, $7EDE55, 0x20)
+	jmp _force_palette_cont
+
+_pal_round59:
+	//Force Palette for Acrobat (Round 5-10)
+	copyMVN($C62540, $7EDC55, 0x20)
+	copyMVN($C62540, $7EDE55, 0x20)
+	jmp _force_palette_cont
+
+_pal_round69:
+	//Force Palette for Ballerina (Round 6-10)
+	copyMVN($C626C0, $7EDC55, 0x20)
+	copyMVN($C626C0, $7EDE55, 0x20)
+	jmp _force_palette_cont
+
 _table_palette:
 	dw _pal_round09
 	dw _force_palette_cont
+	dw _pal_round29
 	dw _force_palette_cont
 	dw _force_palette_cont
-	dw _force_palette_cont
-	dw _force_palette_cont
-	dw _force_palette_cont
+	dw _pal_round59
+	dw _pal_round69
 	dw _force_palette_cont
 	dw _force_palette_cont
 	dw _force_palette_cont
