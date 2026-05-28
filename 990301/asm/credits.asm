@@ -8,7 +8,6 @@
 //The entire problem is about when the player is turning, the input for it is held a bit too long, and displaces the player intended
 //THIS FIX SUCKS, it is absolutely getting around the problem
 
-seekAddr($909000)
 credits_fix:
 	lda $1D4A
 	cmp.w #$03+1
@@ -53,6 +52,8 @@ _credits_fix_spinners:
 	bra _credits_fix_clear
 
 //Hijack routine in relation to turning
+enqueue pc
 seekAddr($839CF8)
 	jsl credits_fix
 	nop; nop
+dequeue pc

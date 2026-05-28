@@ -7,8 +7,7 @@
 
 //Force Palettes per Stage
 //The problem is that it keeps the palette from the Round splash screen
-seekAddr($908100)
-force_palette:
+force_palette_normal:
 	//force palette only on Round ?-10
 	lda $7EDA49
 	cmp.w #9
@@ -56,5 +55,8 @@ _table_palette:
 	dw _force_palette_cont
 	dw _force_palette_cont
 
+
+enqueue pc
 seekAddr($82EFD9)
-	jsl force_palette
+	jsl force_palette_normal
+dequeue pc

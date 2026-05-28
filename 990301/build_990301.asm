@@ -9,6 +9,7 @@ fill $200000,$FF	//Expand to 2MB
 seekFile(0)
 insert "./roms/quinty990301.sfc"
 
+seekAddr($908000)
 include "./asm/arcade.asm"
 include "./asm/options.asm"
 include "./asm/normal.asm"
