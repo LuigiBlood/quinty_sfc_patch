@@ -5,11 +5,11 @@ include "./asm/macros.asm"
 
 output "./roms/quinty990301_patched.sfc", create
 seekFile(0)
-fill $200000,$FF	//Expand to 2MB
+fill $100000,$FF	//1MB
 seekFile(0)
 insert "./roms/quinty990301.sfc"
 
-seekAddr($908000)
+seekAddr($8FFE00)
 include "./asm/arcade.asm"
 include "./asm/options.asm"
 include "./asm/normal.asm"
